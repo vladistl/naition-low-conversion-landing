@@ -10,7 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            registrationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // форма целиком (с кнопкой отправки) оказывается в экране, курсор сразу в первом поле
+            const panel = registrationSection.querySelector('.registration-panel') || registrationSection;
+            panel.scrollIntoView({ behavior: 'instant', block: 'center' });
+            const firstField = form && form.querySelector('input[name="name"]');
+            if (firstField) {
+                firstField.focus({ preventScroll: true });
+            }
         });
     });
 
