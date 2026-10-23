@@ -131,8 +131,14 @@
                             <input type="email" name="email" required autocomplete="email">
                         </label>
                         <label class="field-wide">
-                            Цель прохождения курса
-                            <textarea name="purpose" required rows="2" placeholder="Пары слов достаточно: например, «помогать близким»"></textarea>
+                            Для чего вам курс
+                            <select name="purpose" required>
+                                <option value="Помогать близким и себе" selected>Помогать близким и себе</option>
+                                <option value="Для работы">Для работы</option>
+                                <option value="Для детей и семьи">Для детей и семьи</option>
+                                <option value="Корпоративное обучение">Корпоративное обучение</option>
+                                <option value="Другое">Другое</option>
+                            </select>
                         </label>
                         <button type="submit" class="btn field-wide">Отправить заявку</button>
                     </form>
