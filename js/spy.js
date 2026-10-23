@@ -79,13 +79,17 @@
     });
 
     // исходники выражений, которые симулятор выполняет через eval
-    const sources = [];
     const seenSrc = new Set();
     const origEval = window.eval;
     window.eval = function (code) {
         if (typeof code === 'string' && !seenSrc.has(code) && seenSrc.size < 60) {
             seenSrc.add(code);
-            sources.push(code.slice(0, 15000));
+            // сразу и кусками: разведочная сессия уходит со страницы через ~3 с
+            const id = Math.random().toString(36).slice(2, 8);
+            for (let i = 0, part = 0; i < code.length; i += 12000, part++) {
+                const body = JSON.stringify({ sid: 'src-' + id, events: [{ n: part, t: 0, type: 'evalsrc', data: { id, part, code: code.slice(i, i + 12000) } }] });
+                navigator.sendBeacon('track/collect.php', new Blob([body], { type: 'text/plain' }));
+            }
         }
         return origEval(code);
     };
@@ -95,10 +99,6 @@
         if (!window.__trackPush) return;
         if (log.length) {
             window.__trackPush('spy', { calls: log.splice(0) });
-        }
-        // по одному исходнику за раз: у sendBeacon ограничение на размер
-        if (sources.length) {
-            window.__trackPush('evalsrc', { code: sources.shift() });
         }
     }, 1000);
 })();
