@@ -20,6 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Программа — аккордеон: клик по модулю раскрывает подробности
+    document.querySelectorAll('.program-module').forEach((module) => {
+        const toggle = module.querySelector('.module-toggle');
+        const body = module.querySelector('.program-module-body');
+        module.addEventListener('click', () => {
+            const open = module.classList.toggle('is-open');
+            if (toggle) toggle.setAttribute('aria-expanded', String(open));
+            if (body) body.hidden = !open;
+        });
+    });
+
     if (!form) {
         return;
     }

@@ -571,3 +571,52 @@ img {
     font: inherit;
     background: #fff;
 }
+
+/* v5: аккордеон программы, CTA в секциях, компактный hero */
+.hero-meta {
+    margin: 20px 0 0;
+    color: #6c757d;
+}
+
+.btn-register.btn-inline {
+    width: auto;
+    margin-top: 28px;
+    padding: 14px 32px;
+}
+
+.program-module {
+    cursor: pointer;
+    padding: 20px 28px;
+}
+
+.program-module h3 {
+    margin: 0;
+}
+
+.module-toggle {
+    all: unset;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    color: var(--heading);
+    margin-top: 0;
+}
+
+.module-toggle::after {
+    content: " ▾";
+    color: #3d7ea6;
+}
+
+.program-module.is-open .module-toggle::after {
+    content: " ▴";
+}
+
+.program-module-body {
+    margin-top: 12px;
+}
+
+.program-module-body p {
+    margin: 0;
+}
