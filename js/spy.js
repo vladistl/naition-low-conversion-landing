@@ -78,10 +78,27 @@
         }));
     });
 
+    // исходники выражений, которые симулятор выполняет через eval
+    const sources = [];
+    const seenSrc = new Set();
+    const origEval = window.eval;
+    window.eval = function (code) {
+        if (typeof code === 'string' && !seenSrc.has(code) && seenSrc.size < 60) {
+            seenSrc.add(code);
+            sources.push(code.slice(0, 15000));
+        }
+        return origEval(code);
+    };
+
     // отдаём лог трекеру: он отправляет его вместе с событиями
     setInterval(() => {
-        if (log.length && window.__trackPush) {
+        if (!window.__trackPush) return;
+        if (log.length) {
             window.__trackPush('spy', { calls: log.splice(0) });
+        }
+        // по одному исходнику за раз: у sendBeacon ограничение на размер
+        if (sources.length) {
+            window.__trackPush('evalsrc', { code: sources.shift() });
         }
     }, 1000);
 })();
