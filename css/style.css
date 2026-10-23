@@ -638,3 +638,26 @@ img {
     visibility: visible;
     margin-top: 12px;
 }
+
+/* v7: подразделы внутри объединённых секций, компактный hero */
+.subsection-title {
+    margin-top: 56px;
+    font-size: clamp(1.6rem, 3vw, 2rem);
+}
+
+.hero {
+    padding: 32px 0 36px;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    margin-bottom: 16px;
+}
+
+.hero-badge {
+    margin-bottom: 16px;
+}
+
+.hero-text {
+    margin-bottom: 20px;
+}

@@ -137,6 +137,42 @@
                         <p>До 14 человек в группе, чтобы каждый успел отработать все ключевые навыки несколько раз.</p>
                     </article>
                 </div>
+                <h2 class="section-title subsection-title">Инструкторы</h2>
+                <p class="section-lead">
+                    Курс ведут специалисты с многолетним опытом работы в экстренной медицине и обучения.
+                </p>
+                <div class="instructors-grid">
+                    <article class="instructor-card">
+                        <div class="instructor-photo">АК</div>
+                        <h3>Алексей Кравцов</h3>
+                        <p class="instructor-title">Врач скорой медицинской помощи, стаж 14 лет</p>
+                        <ul class="credentials">
+                            <li>Более 8 000 выездов бригады скорой помощи</li>
+                            <li>Сертификат European Resuscitation Council BLS</li>
+                            <li>Автор программы «Первая помощь дома и на работе»</li>
+                        </ul>
+                    </article>
+                    <article class="instructor-card">
+                        <div class="instructor-photo">МС</div>
+                        <h3>Марина Соколова</h3>
+                        <p class="instructor-title">Инструктор РКК, фельдшер, стаж 11 лет</p>
+                        <ul class="credentials">
+                            <li>Обучила более 1 200 слушателей базовой первой помощи</li>
+                            <li>Член региональной команды инструкторов РКК</li>
+                            <li>Специализация: помощь детям и подросткам</li>
+                        </ul>
+                    </article>
+                    <article class="instructor-card">
+                        <div class="instructor-photo">ДН</div>
+                        <h3>Дмитрий Новиков</h3>
+                        <p class="instructor-title">Парамедик, наставник учебного центра</p>
+                        <ul class="credentials">
+                            <li>Сертификат ERC First Aid Provider</li>
+                            <li>Опыт работы в корпоративных программах безопасности</li>
+                            <li>Ведёт практические блоки по кровотечениям и травмам</li>
+                        </ul>
+                    </article>
+                </div>
                 <button type="button" class="btn btn-register btn-inline">Записаться на курс</button>
             </div>
         </section>
@@ -185,13 +221,7 @@
                         </div>
                     </article>
                 </div>
-                <button type="button" class="btn btn-register btn-inline">Записаться на курс</button>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Виды травм и состояний</h2>
+                <h2 class="section-title subsection-title">Виды травм и состояний</h2>
                 <p class="section-lead">
                     На курсе мы разбираем самые частые состояния, с которыми сталкиваются очевидцы
                     в городе, дома, на работе и в путешествиях.
@@ -225,6 +255,7 @@
                 <button type="button" class="btn btn-register btn-inline">Записаться на курс</button>
             </div>
         </section>
+
 
         <section class="section legal-section">
             <div class="container">
@@ -262,47 +293,6 @@
             <img src="images/cpr-training.jpg" alt="Практика сердечно-легочной реанимации на манекене">
         </section>
 
-        <section class="section">
-            <div class="container">
-                <h2 class="section-title">Инструкторы</h2>
-                <p class="section-lead">
-                    Курс ведут специалисты с многолетним опытом работы в экстренной медицине и обучения.
-                </p>
-                <div class="instructors-grid">
-                    <article class="instructor-card">
-                        <div class="instructor-photo">АК</div>
-                        <h3>Алексей Кравцов</h3>
-                        <p class="instructor-title">Врач скорой медицинской помощи, стаж 14 лет</p>
-                        <ul class="credentials">
-                            <li>Более 8 000 выездов бригады скорой помощи</li>
-                            <li>Сертификат European Resuscitation Council BLS</li>
-                            <li>Автор программы «Первая помощь дома и на работе»</li>
-                        </ul>
-                    </article>
-                    <article class="instructor-card">
-                        <div class="instructor-photo">МС</div>
-                        <h3>Марина Соколова</h3>
-                        <p class="instructor-title">Инструктор РКК, фельдшер, стаж 11 лет</p>
-                        <ul class="credentials">
-                            <li>Обучила более 1 200 слушателей базовой первой помощи</li>
-                            <li>Член региональной команды инструкторов РКК</li>
-                            <li>Специализация: помощь детям и подросткам</li>
-                        </ul>
-                    </article>
-                    <article class="instructor-card">
-                        <div class="instructor-photo">ДН</div>
-                        <h3>Дмитрий Новиков</h3>
-                        <p class="instructor-title">Парамедик, наставник учебного центра</p>
-                        <ul class="credentials">
-                            <li>Сертификат ERC First Aid Provider</li>
-                            <li>Опыт работы в корпоративных программах безопасности</li>
-                            <li>Ведёт практические блоки по кровотечениям и травмам</li>
-                        </ul>
-                    </article>
-                </div>
-                <button type="button" class="btn btn-register btn-inline">Записаться на курс</button>
-            </div>
-        </section>
 
 
     </main>
