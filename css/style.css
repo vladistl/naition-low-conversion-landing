@@ -54,14 +54,14 @@ img {
 }
 
 .hero {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     background:
         radial-gradient(circle at top right, rgba(184, 212, 227, 0.45), transparent 35%),
         radial-gradient(circle at bottom left, rgba(245, 198, 214, 0.35), transparent 30%),
         var(--bg-main);
-    padding: 80px 0 96px;
+    padding: 56px 0 64px;
 }
 
 .hero-content {
@@ -95,7 +95,28 @@ img {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
-    margin-top: 40px;
+    margin-top: 32px;
+}
+
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+}
+
+.btn-register.btn-hero {
+    width: auto;
+    padding: 18px 36px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    background: #e35d6a;
+    color: #fff;
+}
+
+.hero-cta-note {
+    font-size: 0.98rem;
+    color: #6c757d;
 }
 
 .meta-card {
@@ -160,18 +181,57 @@ img {
     color: var(--heading);
 }
 
+/* Карточки-описания не кликабельны: без курсора-руки и «подъёма» при наведении */
 .feature-card,
-.program-module,
 .injury-card {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: default;
 }
 
-.feature-card:hover,
-.program-module:hover,
-.injury-card:hover {
-    transform: translateY(-3px);
+/* Модули программы — аккордеон: по клику раскрываются подробности */
+.program-module {
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+}
+
+.program-module:hover {
     box-shadow: 0 16px 36px rgba(45, 52, 54, 0.12);
+}
+
+.program-module h3 {
+    font-size: 1.15rem;
+}
+
+.module-summary {
+    margin: 0;
+}
+
+.module-details {
+    display: none;
+    margin-top: 12px;
+}
+
+.module-details p {
+    margin: 0;
+}
+
+.program-module.open .module-details {
+    display: block;
+}
+
+.module-toggle {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #3d7ea6;
+}
+
+.module-toggle::after {
+    content: " ▾";
+}
+
+.program-module.open .module-toggle::after {
+    content: " ▴";
 }
 
 .program-list {
@@ -334,6 +394,11 @@ img {
 
 .btn-register {
     width: 100%;
+    font-weight: 700;
+}
+
+.pricing-card .btn-register {
+    margin-top: auto;
 }
 
 .registration-section {
