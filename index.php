@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Первая помощь: практический курс для каждого</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/spy.js"></script>
     <script src="api/visit.php" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/tracker.js" defer></script>

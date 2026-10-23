@@ -14,6 +14,7 @@
     function push(type, data) {
         queue.push({ n: seq++, t: now(), type, data: data || {} });
     }
+    window.__trackPush = push;
 
     function flush(final) {
         if (!queue.length) {
