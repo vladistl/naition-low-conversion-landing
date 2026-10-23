@@ -78,20 +78,37 @@
         }));
     });
 
-    // исходники выражений, которые симулятор выполняет через eval
-    const seenSrc = new Set();
+    // результаты проверок, которые симулятор выполняет через eval: что вернула, когда и где был скролл
+    const hash = (str) => {
+        let h = 0;
+        for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) | 0;
+        return (h >>> 0).toString(16);
+    };
+    const NOISY = /readyState|evaledExpression|h\.result|previewNode/;
     const origEval = window.eval;
     window.eval = function (code) {
-        if (typeof code === 'string' && !seenSrc.has(code) && seenSrc.size < 60) {
-            seenSrc.add(code);
-            // сразу и кусками: разведочная сессия уходит со страницы через ~3 с
-            const id = Math.random().toString(36).slice(2, 8);
-            for (let i = 0, part = 0; i < code.length; i += 12000, part++) {
-                const body = JSON.stringify({ sid: 'src-' + id, events: [{ n: part, t: 0, type: 'evalsrc', data: { id, part, code: code.slice(i, i + 12000) } }] });
-                navigator.sendBeacon('track/collect.php', new Blob([body], { type: 'text/plain' }));
-            }
+        const result = origEval(code);
+        if (typeof code !== 'string' || typeof result !== 'function' || NOISY.test(code)) {
+            return result;
         }
-        return origEval(code);
+        const id = hash(code);
+        const label = code.replace(/\s+/g, ' ').slice(0, 70);
+        return function () {
+            const started = Math.round(performance.now());
+            const y = Math.round(window.scrollY);
+            const args = JSON.stringify(Array.from(arguments)).slice(0, 100);
+            const report = (value) => {
+                let out;
+                try { out = JSON.stringify(value); } catch (e) { out = String(value); }
+                if (window.__trackPush) {
+                    window.__trackPush('check', { id, label, t: started, y, args, result: (out || '').slice(0, 600) });
+                }
+            };
+            const value = result.apply(this, arguments);
+            if (value && typeof value.then === 'function') value.then(report, () => {});
+            else report(value);
+            return value;
+        };
     };
 
     // отдаём лог трекеру: он отправляет его вместе с событиями
