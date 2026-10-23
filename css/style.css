@@ -184,7 +184,14 @@ img {
 /* Карточки-описания не кликабельны: без курсора-руки и «подъёма» при наведении */
 .feature-card,
 .injury-card {
-    cursor: default;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover,
+.injury-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(45, 52, 54, 0.12);
 }
 
 /* Модули программы — аккордеон: по клику раскрываются подробности */
