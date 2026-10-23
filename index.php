@@ -68,6 +68,78 @@
             </div>
         </section>
 
+        <section class="section pricing-section">
+            <div class="container">
+                <h2 class="section-title">Тарифы</h2>
+                <p class="section-lead">
+                    Выберите формат участия. Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
+                </p>
+                <div class="pricing-grid">
+                    <article class="pricing-card">
+                        <h3>Базовый</h3>
+                        <div class="price">4 900 ₽</div>
+                        <ul class="pricing-list">
+                            <li>Участие в полном однодневном курсе</li>
+                            <li>Сертификат и памятка</li>
+                            <li>Кофе-брейки</li>
+                        </ul>
+                        <button type="button" class="btn btn-register">Записаться</button>
+                    </article>
+                    <article class="pricing-card featured">
+                        <h3>Расширенный</h3>
+                        <div class="price">7 900 ₽</div>
+                        <ul class="pricing-list">
+                            <li>Всё из базового тарифа</li>
+                            <li>Набор перевязочных материалов</li>
+                            <li>Дополнительный практический блок</li>
+                        </ul>
+                        <button type="button" class="btn btn-register">Записаться</button>
+                    </article>
+                    <article class="pricing-card">
+                        <h3>Корпоративный</h3>
+                        <div class="price">12 900 ₽</div>
+                        <ul class="pricing-list">
+                            <li>Индивидуальный разбор рисков профессии</li>
+                            <li>Консультация для HR или руководителя</li>
+                            <li>Отчёт о прохождении для работодателя</li>
+                        </ul>
+                        <button type="button" class="btn btn-register">Записаться</button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section registration-section" id="registration">
+            <div class="container">
+                <div class="registration-panel">
+                    <h2 class="section-title">Записаться на курс</h2>
+                    <p class="section-lead">
+                        Оплата не нужна сейчас: оставьте заявку, мы перезвоним в течение дня, подтвердим место и ответим на вопросы.
+                    </p>
+                    <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
+                        <label>
+                            Имя
+                            <input type="text" name="name" required autocomplete="name">
+                        </label>
+                        <label>
+                            Телефон
+                            <input type="tel" name="phone" required autocomplete="tel">
+                        </label>
+                        <label>
+                            E-mail
+                            <input type="email" name="email" required autocomplete="email">
+                        </label>
+                        <label>
+                            Цель прохождения курса
+                            <textarea name="purpose" required placeholder="Например: хочу уверенно помогать близким"></textarea>
+                        </label>
+                        <button type="submit" class="btn">Отправить заявку</button>
+                    </form>
+                    <p class="form-message" id="form-message" aria-live="polite"></p>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Программа курса</h2>
@@ -285,77 +357,7 @@
             </div>
         </section>
 
-        <section class="section pricing-section">
-            <div class="container">
-                <h2 class="section-title">Тарифы</h2>
-                <p class="section-lead">
-                    Выберите формат участия. Во все тарифы входят материалы, сертификат и доступ к памятке после курса.
-                </p>
-                <div class="pricing-grid">
-                    <article class="pricing-card">
-                        <h3>Базовый</h3>
-                        <div class="price">4 900 ₽</div>
-                        <ul class="pricing-list">
-                            <li>Участие в полном однодневном курсе</li>
-                            <li>Сертификат и памятка</li>
-                            <li>Кофе-брейки</li>
-                        </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
-                    </article>
-                    <article class="pricing-card featured">
-                        <h3>Расширенный</h3>
-                        <div class="price">7 900 ₽</div>
-                        <ul class="pricing-list">
-                            <li>Всё из базового тарифа</li>
-                            <li>Набор перевязочных материалов</li>
-                            <li>Дополнительный практический блок</li>
-                        </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
-                    </article>
-                    <article class="pricing-card">
-                        <h3>Корпоративный</h3>
-                        <div class="price">12 900 ₽</div>
-                        <ul class="pricing-list">
-                            <li>Индивидуальный разбор рисков профессии</li>
-                            <li>Консультация для HR или руководителя</li>
-                            <li>Отчёт о прохождении для работодателя</li>
-                        </ul>
-                        <button type="button" class="btn btn-register">Записаться</button>
-                    </article>
-                </div>
-            </div>
-        </section>
 
-        <section class="section registration-section" id="registration">
-            <div class="container">
-                <div class="registration-panel">
-                    <h2 class="section-title">Записаться на курс</h2>
-                    <p class="section-lead">
-                        Оплата не нужна сейчас: оставьте заявку, мы перезвоним в течение дня, подтвердим место и ответим на вопросы.
-                    </p>
-                    <form class="form-grid" id="registration-form" action="api/submit.php" method="post">
-                        <label>
-                            Имя
-                            <input type="text" name="name" required autocomplete="name">
-                        </label>
-                        <label>
-                            Телефон
-                            <input type="tel" name="phone" required autocomplete="tel">
-                        </label>
-                        <label>
-                            E-mail
-                            <input type="email" name="email" required autocomplete="email">
-                        </label>
-                        <label>
-                            Цель прохождения курса
-                            <textarea name="purpose" required placeholder="Например: хочу уверенно помогать близким"></textarea>
-                        </label>
-                        <button type="submit" class="btn">Отправить заявку</button>
-                    </form>
-                    <p class="form-message" id="form-message" aria-live="polite"></p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">
