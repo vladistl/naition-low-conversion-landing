@@ -620,3 +620,21 @@ img {
 .program-module-body p {
     margin: 0;
 }
+
+/* v6: свёрнутое тело модуля остаётся в DOM (полная программа), но не видно до клика */
+.program-module-body {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    margin-top: 0;
+}
+
+.program-module-body p {
+    visibility: visible;
+}
+
+.program-module.is-open .program-module-body {
+    height: auto;
+    visibility: visible;
+    margin-top: 12px;
+}

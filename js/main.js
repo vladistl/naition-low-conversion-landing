@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         module.addEventListener('click', () => {
             const open = module.classList.toggle('is-open');
             if (toggle) toggle.setAttribute('aria-expanded', String(open));
-            if (body) body.hidden = !open;
         });
     });
 
