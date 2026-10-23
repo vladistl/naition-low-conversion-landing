@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="api/visit.php" defer></script>
     <script src="js/main.js" defer></script>
+    <script src="js/tracker.js" defer></script>
 </head>
 <body>
     <header class="hero">
