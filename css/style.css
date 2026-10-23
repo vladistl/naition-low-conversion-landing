@@ -184,25 +184,15 @@ img {
 /* Карточки-описания не кликабельны: без курсора-руки и «подъёма» при наведении */
 .feature-card,
 .injury-card {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.feature-card:hover,
-.injury-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 36px rgba(45, 52, 54, 0.12);
+    cursor: default;
 }
 
 /* Модули программы — аккордеон: по клику раскрываются подробности */
 .program-module {
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
+    cursor: default;
 }
 
-.program-module:hover {
-    box-shadow: 0 16px 36px rgba(45, 52, 54, 0.12);
-}
+
 
 .program-module h3 {
     font-size: 1.15rem;

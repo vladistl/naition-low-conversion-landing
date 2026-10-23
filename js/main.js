@@ -14,11 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Модули программы раскрываются по клику
-    document.querySelectorAll('.program-module').forEach((module) => {
-        module.addEventListener('click', () => module.classList.toggle('open'));
-    });
-
     if (!form) {
         return;
     }
